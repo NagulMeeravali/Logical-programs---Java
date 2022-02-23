@@ -1,0 +1,244 @@
+Arrays:
+--------
+1. WAP to store +ve and -ve values in two different arrays.
+2. WAP to find the given element is present in the given array or not.
+3. WAP to delete first occurance of seach element in the given array.
+4. WAP to delete Last occurance of seach element in the given array.
+5. WAP to delete ALL the occurance of seach element in the given array.
+6. WAP to insert an element in specific index position
+7. WAP to insert an element in 0th index position.
+8. WAP to print prime numbers in the given array.
+9. WAP to print sum of even numbers and sum of odd numbers in the given array.
+10.WAP to find min,second min, max and second max, average and total of given array.
+====================================================================================
+ // 1. WAP to store +ve and -ve values in two different arrays.
+class Sample1{
+    
+    public static void main(String args[]){
+      
+      int arr[]={45,-23,89,-56,-32,90};
+      int p[]=new int[arr.length];
+      int n[]=new int[arr.length];
+      int k=0,m=0;
+      for(int i=0;i<arr.length;i++){
+          if(arr[i]>0){
+              p[k]=arr[i];
+               k++;
+          }
+          else{
+              n[m]=arr[i];
+              m++;
+          }
+      }
+    System.out.println("+ve Elements");
+    for(int i=0;i<k;i++){
+        System.out.print(p[i]+" ");
+    }
+    
+    System.out.println("\n-ve Elements");
+    for(int i=0;i<m;i++){
+        System.out.print(n[i]+" ");
+    }
+    }
+}
+===================================================================
+ //2. WAP to find the given element is present in the given array or not.
+class Sample1{
+    
+    public static void main(String args[]){
+      
+      int arr[]={45,23,89,56,32,90};
+      int key=190;
+      
+         int flag=0;
+       for(int i=0;i<arr.length;i++){
+           if(arr[i]==key){
+               
+               flag=1;
+           }
+       }  
+       if(flag==1){
+           System.out.print("yes the element is present in array");
+       }
+       else{
+           System.out.println("No, the element is not found");
+       }
+       
+    }
+}
+====================================================================
+ //3. WAP to delete first occurance of seach element in the given array.
+class Sample1{
+    
+    public static void main(String args[]){
+      
+      int arr[]={45,23,45,56,45,90};
+      int key=45;
+       
+       for(int i=0;i<arr.length;i++){
+           if(key==arr[i]){
+                for(int j=i;j<arr.length-1;j++){
+                       arr[j]=arr[j+1];
+                }
+                break;
+           }
+       }
+       for(int i=0;i<arr.length-1;i++){
+           System.out.print(arr[i]+" ");
+       }
+    }
+}
+=========================================================================
+ //4. WAP to delete last occurance of seach element in the given array.
+class Sample1{
+    
+    public static void main(String args[]){
+      
+      int arr[]={45,23,45,56,45,90};
+      int key=45;
+       
+       for(int i=arr.length-1;i>=0;i--){
+           if(key==arr[i]){
+                for(int j=i;j<arr.length-1;j++){
+                       arr[j]=arr[j+1];
+                }
+                break;
+           }
+       }
+       for(int i=0;i<arr.length-1;i++){
+           System.out.print(arr[i]+" ");
+       }
+    }
+}
+=================================================
+ //5. WAP to delete All occurance of seach element in the given array.
+class Sample1{
+    
+    public static void main(String args[]){
+      
+      int arr[]={45,23,45,56,45,90};
+      int key=45;
+      int count=0;
+       
+       for(int i=0;i<arr.length;i++){
+           if(key==arr[i]){
+               count++;
+                for(int j=i;j<arr.length-1;j++){
+                       arr[j]=arr[j+1];
+                }
+               
+           }
+       }
+       for(int i=0;i<arr.length-count;i++){
+           System.out.print(arr[i]+" ");
+       }
+    }
+}
+====================================================================
+// 6. WAP to insert an element in specific index position
+class Sample1{
+    
+    public static void main(String args[]){
+      
+      int arr[]=new int[100];
+      arr[0]=90;           // 90 40 30 20 10 50  
+      arr[1]=40;
+      arr[2]=30;
+      arr[3]=20;
+      arr[4]=10;
+      arr[5]=50;
+      
+      
+      int index=3;
+      int value=100;
+       
+        if(index<=arr.length  && index>=0){
+            for(int i=6;i>=index;i--){
+                arr[i]=arr[i-1];
+                
+            }
+            arr[index]=value;
+            
+        } 
+        else{
+
+          System.out.println("Index poisition should be between 0- "+((arr.length)+1));  
+        }
+        int count=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=0){
+                count++;
+            }
+            else{
+                break;
+            }
+            
+        }
+        for(int i=0;i<count;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+================================================================
+
+//WAP to insert an element in 0th index position.
+class Sample1{
+    
+    public static void main(String args[]){
+      
+      int arr[]=new int[100];
+      arr[0]=90;           // 90 40 30 20 10 50  
+      arr[1]=40;
+      arr[2]=30;
+      arr[3]=20;
+      arr[4]=10;
+      arr[5]=50;
+      
+      int index=0;
+      int value=100;
+       
+        if(index<=arr.length  && index>=0){
+            for(int i=6;i>index;i--){
+                arr[i]=arr[i-1];
+                
+            }
+            arr[index]=value;
+            
+        } 
+        else{
+
+          System.out.println("Index poisition should be between 0- "+((arr.length)+1));  
+        }
+        int count=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=0){
+                count++;
+            }
+            else{
+                break;
+            }
+            
+        }
+        for(int i=0;i<count;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+===============================================================================
+
+
+
+
+Strings:
+--------
+11. WAP to print reverse of a given string
+12. WAP to check given string is palindrome or not.
+13. WAP to print number of words in a given string.
+14. WAP to print words reverse of a given string.
+15. WAP to print number of alphabets in each word of a given string.
+16. WAP to print number of vowels and number of consonents of each word in a given string.
+17. WAP to print number of digits, alphabets and special characters in a given string.
+18. WAP to find logest word in a given string.
+19. WAP to find smallest word in a given string.
+20. WAP to print palindrome words in a given string.
+
